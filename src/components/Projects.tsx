@@ -4,9 +4,18 @@ import { Button } from "@/components/ui/button";
 import { ExternalLink, Github } from "lucide-react";
 import cerebroScreenshot from "@/assets/cerebro-screenshot.png";
 import mulembeScreenshot from "@/assets/mulembe-screenshot.png";
+import gsmaScreenshot from "@/assets/gsma-screenshot.png";
 
 const Projects = () => {
   const projects = [
+    {
+      title: "Certi-Trust GSMA System",
+      description:
+        "GSMA Mobile Money Certification platform for secure mobile money services, trusted by 1.35 billion people worldwide. Provides industry-standard certification for mobile money providers.",
+      image: gsmaScreenshot,
+      tags: ["React", "Certification Platform", "Mobile Money", "Security Standards"],
+      link: "https://certification.gsmamobilemoneycertification.com/",
+    },
     {
       title: "Cerebro System",
       description:
