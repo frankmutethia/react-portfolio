@@ -2,9 +2,18 @@ import { Card } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { ExternalLink, Github } from "lucide-react";
+import cerebroScreenshot from "@/assets/cerebro-screenshot.png";
 
 const Projects = () => {
   const projects = [
+    {
+      title: "Cerebro System",
+      description:
+        "An advanced exam proctoring platform with AI monitoring, screen lock, and real-time dashboard for ensuring fairness and security in online examinations.",
+      image: cerebroScreenshot,
+      tags: ["React", "AI Monitoring", "Real-time Dashboard", "Secure Environment"],
+      link: "https://cerebro.rodela.co.ke/",
+    },
     {
       title: "E-Commerce Platform",
       description:
@@ -87,14 +96,28 @@ const Projects = () => {
                   ))}
                 </div>
                 <div className="flex gap-3">
-                  <Button size="sm" variant="outline" className="flex-1">
-                    <ExternalLink className="h-4 w-4 mr-2" />
-                    Live Demo
-                  </Button>
-                  <Button size="sm" variant="outline" className="flex-1">
-                    <Github className="h-4 w-4 mr-2" />
-                    Code
-                  </Button>
+                  {project.link ? (
+                    <Button 
+                      size="sm" 
+                      variant="outline" 
+                      className="flex-1"
+                      onClick={() => window.open(project.link, '_blank')}
+                    >
+                      <ExternalLink className="h-4 w-4 mr-2" />
+                      Live Demo
+                    </Button>
+                  ) : (
+                    <>
+                      <Button size="sm" variant="outline" className="flex-1">
+                        <ExternalLink className="h-4 w-4 mr-2" />
+                        Live Demo
+                      </Button>
+                      <Button size="sm" variant="outline" className="flex-1">
+                        <Github className="h-4 w-4 mr-2" />
+                        Code
+                      </Button>
+                    </>
+                  )}
                 </div>
               </div>
             </Card>
