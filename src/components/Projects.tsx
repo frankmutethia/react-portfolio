@@ -5,9 +5,18 @@ import { ExternalLink, Github } from "lucide-react";
 import cerebroScreenshot from "@/assets/cerebro-screenshot.png";
 import mulembeScreenshot from "@/assets/mulembe-screenshot.png";
 import gsmaScreenshot from "@/assets/gsma-screenshot.png";
+import certitrustProctoringScreenshot from "@/assets/certitrust-proctoring-screenshot.png";
 
 const Projects = () => {
   const projects = [
+    {
+      title: "Certi-Trust Exam Proctoring System",
+      description:
+        "Advanced AI-powered exam proctoring platform with biometric verification, real-time monitoring, and encrypted question databases. Trusted by 500+ educational institutions for secure online examinations.",
+      image: certitrustProctoringScreenshot,
+      tags: ["React", "AI Proctoring", "Biometric Verification", "Real-time Monitoring"],
+      link: "https://rodela.co.ke/",
+    },
     {
       title: "Certi-Trust GSMA System",
       description:
