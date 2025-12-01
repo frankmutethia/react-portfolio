@@ -6,6 +6,7 @@ import cerebroScreenshot from "@/assets/cerebro-screenshot.png";
 import mulembeScreenshot from "@/assets/mulembe-screenshot.png";
 import gsmaScreenshot from "@/assets/gsma-screenshot.png";
 import certitrustProctoringScreenshot from "@/assets/certitrust-proctoring-screenshot.png";
+import bingeflixScreenshot from "@/assets/bingeflix-screenshot.png";
 
 const Projects = () => {
   const projects = [
@@ -40,6 +41,14 @@ const Projects = () => {
       image: mulembeScreenshot,
       tags: ["React", "Community Portal", "Event Management", "Membership System"],
       link: "https://mulembecommunitynswinc.org.au/",
+    },
+    {
+      title: "Bingeflix Movie App",
+      description:
+        "A modern movie browsing application with real-time search, detailed movie information, and personalized recommendations. Features an intuitive interface for discovering popular, top-rated, and upcoming films.",
+      image: bingeflixScreenshot,
+      tags: ["React", "TypeScript", "Movie API", "Responsive Design"],
+      link: "https://bingeflix-eight.vercel.app/",
     },
     {
       title: "E-Commerce Platform",
