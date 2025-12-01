@@ -3,6 +3,7 @@ import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { ExternalLink, Github } from "lucide-react";
 import cerebroScreenshot from "@/assets/cerebro-screenshot.png";
+import mulembeScreenshot from "@/assets/mulembe-screenshot.png";
 
 const Projects = () => {
   const projects = [
@@ -13,6 +14,14 @@ const Projects = () => {
       image: cerebroScreenshot,
       tags: ["React", "AI Monitoring", "Real-time Dashboard", "Secure Environment"],
       link: "https://cerebro.rodela.co.ke/",
+    },
+    {
+      title: "Mulembe Community NSW",
+      description:
+        "Community website for the Kenyan Luhya community in Australia with 200+ members, featuring event management, membership portal, and cultural heritage preservation.",
+      image: mulembeScreenshot,
+      tags: ["React", "Community Portal", "Event Management", "Membership System"],
+      link: "https://mulembecommunitynswinc.org.au/",
     },
     {
       title: "E-Commerce Platform",
