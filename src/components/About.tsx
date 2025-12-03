@@ -1,7 +1,16 @@
 import { Card } from "@/components/ui/card";
 import { Code2, Palette, Smartphone } from "lucide-react";
+import Lottie from "lottie-react";
+import { useEffect, useState } from "react";
 
 const About = () => {
+  const [animationData, setAnimationData] = useState(null);
+
+  useEffect(() => {
+    fetch("/animations/coding-coffee.json")
+      .then((res) => res.json())
+      .then((data) => setAnimationData(data));
+  }, []);
   const expertise = [
     {
       icon: Code2,
@@ -33,15 +42,26 @@ const About = () => {
   return (
     <section id="about" className="min-h-screen py-20 bg-section-bg">
       <div className="container mx-auto px-6">
-        <div className="text-center mb-16 animate-fade-in">
-          <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-4">
-            About Me
-          </h2>
-          <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-            I'm a passionate Software Engineer with a strong foundation in full-stack development
-            and UI/UX design. I love turning complex problems into simple, beautiful, and intuitive
-            solutions.
-          </p>
+        <div className="flex flex-col lg:flex-row items-center gap-8 mb-16">
+          <div className="flex-1 text-center lg:text-left animate-fade-in">
+            <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-4">
+              About Me
+            </h2>
+            <p className="text-lg text-muted-foreground max-w-2xl">
+              I'm a passionate Software Engineer with a strong foundation in full-stack development
+              and UI/UX design. I love turning complex problems into simple, beautiful, and intuitive
+              solutions.
+            </p>
+          </div>
+          <div className="w-64 h-64 md:w-80 md:h-80 animate-fade-in">
+            {animationData && (
+              <Lottie
+                animationData={animationData}
+                loop={true}
+                className="w-full h-full"
+              />
+            )}
+          </div>
         </div>
 
         <div className="grid md:grid-cols-3 gap-8 mb-20">
