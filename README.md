@@ -1,73 +1,110 @@
-# Welcome to your Lovable project
+# React Portfolio
 
-## Project info
+A modern, responsive portfolio website built with React, TypeScript, and Tailwind CSS.
 
-**URL**: https://lovable.dev/projects/43e90de7-7bfe-479a-ae74-1f5211ccb737
+## Features
 
-## How can I edit this code?
+- 🎨 Modern UI with dark/light theme support
+- 📱 Fully responsive design
+- ⚡ Built with Vite for fast development and builds
+- 🎭 Smooth animations and transitions
+- 🧩 Component-based architecture with shadcn/ui
+- 📝 TypeScript for type safety
 
-There are several ways of editing your application.
+## Technologies
 
-**Use Lovable**
+- **React 18** - UI library
+- **TypeScript** - Type safety
+- **Vite** - Build tool and dev server
+- **Tailwind CSS** - Utility-first CSS framework
+- **shadcn/ui** - High-quality component library
+- **React Router** - Client-side routing
+- **next-themes** - Theme management
+- **Lottie React** - Animations
 
-Simply visit the [Lovable Project](https://lovable.dev/projects/43e90de7-7bfe-479a-ae74-1f5211ccb737) and start prompting.
+## Getting Started
 
-Changes made via Lovable will be committed automatically to this repo.
+### Prerequisites
 
-**Use your preferred IDE**
+- Node.js (v18 or higher recommended)
+- npm or yarn
 
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
+### Installation
 
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
-
-Follow these steps:
-
-```sh
-# Step 1: Clone the repository using the project's Git URL.
+1. Clone the repository:
+```bash
 git clone <YOUR_GIT_URL>
+cd react-portfolio
+```
 
-# Step 2: Navigate to the project directory.
-cd <YOUR_PROJECT_NAME>
+2. Install dependencies:
+```bash
+npm install
+```
 
-# Step 3: Install the necessary dependencies.
-npm i
-
-# Step 4: Start the development server with auto-reloading and an instant preview.
+3. Start the development server:
+```bash
 npm run dev
 ```
 
-**Edit a file directly in GitHub**
+The application will be available at `http://localhost:8080`
 
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
+## Available Scripts
 
-**Use GitHub Codespaces**
+- `npm run dev` - Start development server
+- `npm run build` - Build for production
+- `npm run build:dev` - Build in development mode
+- `npm run preview` - Preview production build
+- `npm run lint` - Run ESLint
 
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
+## Project Structure
 
-## What technologies are used for this project?
+```
+src/
+├── components/       # React components
+│   ├── About.tsx
+│   ├── Contact.tsx
+│   ├── Experience.tsx
+│   ├── Hero.tsx
+│   ├── Navigation.tsx
+│   ├── Projects.tsx
+│   ├── Skills.tsx
+│   └── ui/          # shadcn/ui components
+├── pages/           # Page components
+├── hooks/           # Custom React hooks
+├── lib/             # Utility functions
+├── assets/          # Images and static assets
+└── App.tsx          # Root component
+```
 
-This project is built with:
+## Customization
 
-- Vite
-- TypeScript
-- React
-- shadcn-ui
-- Tailwind CSS
+1. **Personal Information**: Update the content in:
+   - `src/components/Hero.tsx` - Name, title, bio
+   - `src/components/About.tsx` - About section
+   - `src/components/Experience.tsx` - Work experience
+   - `src/components/Projects.tsx` - Project showcase
+   - `src/components/Contact.tsx` - Contact information
 
-## How can I deploy this project?
+2. **Styling**: Modify colors and themes in `src/index.css`
 
-Simply open [Lovable](https://lovable.dev/projects/43e90de7-7bfe-479a-ae74-1f5211ccb737) and click on Share -> Publish.
+3. **Images**: Replace images in `src/assets/` with your own
 
-## Can I connect a custom domain to my Lovable project?
+## Deployment
 
-Yes, you can!
+Build the project for production:
 
-To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
+```bash
+npm run build
+```
 
-Read more here: [Setting up a custom domain](https://docs.lovable.dev/features/custom-domain#custom-domain)
+The `dist` folder will contain the production-ready files that can be deployed to any static hosting service like:
+- Vercel
+- Netlify
+- GitHub Pages
+- AWS S3
+- Any other static hosting service
+
+## License
+
+MIT
