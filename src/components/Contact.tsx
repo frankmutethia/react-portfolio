@@ -28,61 +28,61 @@ const Contact = () => {
   };
 
   return (
-    <section id="contact" className="min-h-screen py-20 bg-section-bg">
-      <div className="container mx-auto px-6">
-        <div className="text-center mb-16 animate-fade-in">
-          <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-4">
+    <section id="contact" className="min-h-screen py-12 sm:py-20 bg-section-bg">
+      <div className="container mx-auto px-4 sm:px-6">
+        <div className="text-center mb-12 sm:mb-16 animate-fade-in">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-foreground mb-4">
             Get In Touch
           </h2>
-          <p className="text-lg text-muted-foreground">
+          <p className="text-base sm:text-lg text-muted-foreground px-4">
             Have a project in mind? Let's work together to create something amazing
           </p>
         </div>
 
-        <div className="grid md:grid-cols-2 gap-12 max-w-6xl mx-auto">
-          <div className="space-y-8 animate-slide-in-left">
+        <div className="grid md:grid-cols-2 gap-8 sm:gap-12 max-w-6xl mx-auto">
+          <div className="space-y-6 sm:space-y-8 animate-slide-in-left">
             <div>
-              <h3 className="text-2xl font-bold text-foreground mb-4">Let's Talk</h3>
-              <p className="text-muted-foreground mb-6">
+              <h3 className="text-xl sm:text-2xl font-bold text-foreground mb-4">Let's Talk</h3>
+              <p className="text-sm sm:text-base text-muted-foreground mb-6">
                 I'm always open to discussing new projects, creative ideas, or opportunities to
                 be part of your vision.
               </p>
             </div>
 
             <div className="space-y-4">
-              <div className="flex items-center gap-4">
-                <div className="h-12 w-12 rounded-lg bg-primary/10 flex items-center justify-center">
-                  <Mail className="h-6 w-6 text-primary" />
+              <div className="flex items-center gap-3 sm:gap-4">
+                <div className="h-10 w-10 sm:h-12 sm:w-12 rounded-lg bg-primary/10 flex items-center justify-center flex-shrink-0">
+                  <Mail className="h-5 w-5 sm:h-6 sm:w-6 text-primary" />
                 </div>
                 <div>
-                  <p className="text-sm text-muted-foreground">Email</p>
-                  <p className="text-foreground">your.email@example.com</p>
+                  <p className="text-xs sm:text-sm text-muted-foreground">Email</p>
+                  <p className="text-sm sm:text-base text-foreground break-all">your.email@example.com</p>
                 </div>
               </div>
 
-              <div className="flex items-center gap-4">
-                <div className="h-12 w-12 rounded-lg bg-primary/10 flex items-center justify-center">
-                  <Phone className="h-6 w-6 text-primary" />
+              <div className="flex items-center gap-3 sm:gap-4">
+                <div className="h-10 w-10 sm:h-12 sm:w-12 rounded-lg bg-primary/10 flex items-center justify-center flex-shrink-0">
+                  <Phone className="h-5 w-5 sm:h-6 sm:w-6 text-primary" />
                 </div>
                 <div>
-                  <p className="text-sm text-muted-foreground">Phone</p>
-                  <p className="text-foreground">+1 (123) 456-7890</p>
+                  <p className="text-xs sm:text-sm text-muted-foreground">Phone</p>
+                  <p className="text-sm sm:text-base text-foreground">+1 (123) 456-7890</p>
                 </div>
               </div>
 
-              <div className="flex items-center gap-4">
-                <div className="h-12 w-12 rounded-lg bg-primary/10 flex items-center justify-center">
-                  <MapPin className="h-6 w-6 text-primary" />
+              <div className="flex items-center gap-3 sm:gap-4">
+                <div className="h-10 w-10 sm:h-12 sm:w-12 rounded-lg bg-primary/10 flex items-center justify-center flex-shrink-0">
+                  <MapPin className="h-5 w-5 sm:h-6 sm:w-6 text-primary" />
                 </div>
                 <div>
-                  <p className="text-sm text-muted-foreground">Location</p>
-                  <p className="text-foreground">Your City, Country</p>
+                  <p className="text-xs sm:text-sm text-muted-foreground">Location</p>
+                  <p className="text-sm sm:text-base text-foreground">Your City, Country</p>
                 </div>
               </div>
             </div>
           </div>
 
-          <Card className="p-8 bg-card border-card-border animate-slide-in-right">
+          <Card className="p-6 sm:p-8 bg-card border-card-border animate-slide-in-right">
             <form onSubmit={handleSubmit} className="space-y-6">
               <div>
                 <label htmlFor="name" className="block text-sm font-medium text-foreground mb-2">
@@ -131,7 +131,7 @@ const Contact = () => {
                 />
               </div>
 
-              <Button type="submit" className="w-full bg-primary hover:bg-primary/90">
+              <Button type="submit" className="w-full bg-primary hover:bg-primary/90 min-h-[44px]">
                 <Send className="h-4 w-4 mr-2" />
                 Send Message
               </Button>

@@ -50,21 +50,29 @@ const Projects = () => {
       tags: ["React", "TypeScript", "Movie API", "Responsive Design"],
       link: "https://bingeflix-eight.vercel.app/",
     },
+    {
+      title: "MindCraft AI",
+      description:
+        "AI consultancy website helping businesses harness artificial intelligence to unlock growth, efficiency, and innovation. Features a modern space-themed design with AI-driven intelligence solutions.",
+      image: "https://images.unsplash.com/photo-1485827404703-89b55fcc595e?w=600&h=400&fit=crop",
+      tags: ["React", "AI Consultancy", "Modern Design", "Vercel"],
+      link: "https://react-mindcraftai.vercel.app/",
+    },
   ];
 
   return (
-    <section id="projects" className="min-h-screen py-20 bg-section-bg">
-      <div className="container mx-auto px-6">
-        <div className="text-center mb-16 animate-fade-in">
-          <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-4">
+    <section id="projects" className="min-h-screen py-12 sm:py-20 bg-section-bg">
+      <div className="container mx-auto px-4 sm:px-6">
+        <div className="text-center mb-12 sm:mb-16 animate-fade-in">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-foreground mb-4">
             Featured Projects
           </h2>
-          <p className="text-lg text-muted-foreground">
+          <p className="text-base sm:text-lg text-muted-foreground px-4">
             A selection of projects that showcase my skills and experience
           </p>
         </div>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
           {projects.map((project, index) => (
             <Card
               key={index}
@@ -79,9 +87,9 @@ const Projects = () => {
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-card to-transparent opacity-60" />
               </div>
-              <div className="p-6">
-                <h3 className="text-xl font-bold text-foreground mb-2">{project.title}</h3>
-                <p className="text-muted-foreground mb-4 text-sm">{project.description}</p>
+              <div className="p-4 sm:p-6">
+                <h3 className="text-lg sm:text-xl font-bold text-foreground mb-2">{project.title}</h3>
+                <p className="text-muted-foreground mb-4 text-xs sm:text-sm">{project.description}</p>
                 <div className="flex flex-wrap gap-2 mb-4">
                   {project.tags.map((tag, idx) => (
                     <Badge key={idx} variant="secondary" className="text-xs">
@@ -89,12 +97,12 @@ const Projects = () => {
                     </Badge>
                   ))}
                 </div>
-                <div className="flex gap-3">
+                <div className="flex flex-col sm:flex-row gap-3">
                   {project.link ? (
                     <Button 
                       size="sm" 
                       variant="outline" 
-                      className="flex-1"
+                      className="flex-1 min-h-[44px]"
                       onClick={() => window.open(project.link, '_blank')}
                     >
                       <ExternalLink className="h-4 w-4 mr-2" />
@@ -102,11 +110,11 @@ const Projects = () => {
                     </Button>
                   ) : (
                     <>
-                      <Button size="sm" variant="outline" className="flex-1">
+                      <Button size="sm" variant="outline" className="flex-1 min-h-[44px]">
                         <ExternalLink className="h-4 w-4 mr-2" />
                         Live Demo
                       </Button>
-                      <Button size="sm" variant="outline" className="flex-1">
+                      <Button size="sm" variant="outline" className="flex-1 min-h-[44px]">
                         <Github className="h-4 w-4 mr-2" />
                         Code
                       </Button>

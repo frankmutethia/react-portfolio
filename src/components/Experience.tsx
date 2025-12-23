@@ -39,27 +39,27 @@ const Experience = () => {
   ];
 
   return (
-    <section id="experience" className="min-h-screen py-20 bg-background">
-      <div className="container mx-auto px-6">
-        <div className="text-center mb-16 animate-fade-in">
-          <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-4">
+    <section id="experience" className="min-h-screen py-12 sm:py-20 bg-background">
+      <div className="container mx-auto px-4 sm:px-6">
+        <div className="text-center mb-12 sm:mb-16 animate-fade-in">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-foreground mb-4">
             Work Experience
           </h2>
-          <p className="text-lg text-muted-foreground">
+          <p className="text-base sm:text-lg text-muted-foreground px-4">
             My professional journey and the impact I've made
           </p>
         </div>
 
-        <div className="max-w-4xl mx-auto space-y-8">
+        <div className="max-w-4xl mx-auto space-y-6 sm:space-y-8">
           {experiences.map((exp, index) => (
             <Card
               key={index}
-              className="p-8 bg-card border-card-border hover:border-primary/50 transition-all duration-300 animate-slide-up"
-              style={{ animationDelay: `${index * 0.1}s` }}
+              className="p-6 sm:p-8 bg-card border-card-border hover:border-primary/50 transition-all duration-300 animate-slide-up"
+              style={{ animationDelay: `${index * 0.1}s` } as React.CSSProperties}
             >
               <div className="flex flex-col md:flex-row md:items-start md:justify-between mb-4">
                 <div>
-                  <h3 className="text-2xl font-bold text-foreground mb-2">{exp.role}</h3>
+                  <h3 className="text-xl sm:text-2xl font-bold text-foreground mb-2">{exp.role}</h3>
                   <div className="flex items-center gap-2 text-muted-foreground mb-2">
                     <Building2 className="h-4 w-4" />
                     <span>{exp.company}</span>

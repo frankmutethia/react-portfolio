@@ -40,20 +40,20 @@ const About = () => {
   ];
 
   return (
-    <section id="about" className="min-h-screen py-20 bg-section-bg">
-      <div className="container mx-auto px-6">
-        <div className="flex flex-col lg:flex-row items-center gap-8 mb-16">
+    <section id="about" className="min-h-screen py-12 sm:py-20 bg-section-bg">
+      <div className="container mx-auto px-4 sm:px-6">
+        <div className="flex flex-col lg:flex-row items-center gap-6 sm:gap-8 mb-12 sm:mb-16">
           <div className="flex-1 text-center lg:text-left animate-fade-in">
-            <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-4">
+            <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-foreground mb-4">
               About Me
             </h2>
-            <p className="text-lg text-muted-foreground max-w-2xl">
+            <p className="text-base sm:text-lg text-muted-foreground max-w-2xl mx-auto lg:mx-0">
               I'm a passionate Software Engineer with a strong foundation in full-stack development
               and UI/UX design. I love turning complex problems into simple, beautiful, and intuitive
               solutions.
             </p>
           </div>
-          <div className="w-64 h-64 md:w-80 md:h-80 animate-fade-in">
+          <div className="w-48 h-48 sm:w-64 sm:h-64 md:w-80 md:h-80 animate-fade-in">
             {animationData && (
               <Lottie
                 animationData={animationData}
@@ -64,7 +64,7 @@ const About = () => {
           </div>
         </div>
 
-        <div className="grid md:grid-cols-3 gap-8 mb-20">
+        <div className="grid sm:grid-cols-2 md:grid-cols-3 gap-6 sm:gap-8 mb-12 sm:mb-20">
           {expertise.map((item, index) => (
             <Card
               key={index}
@@ -72,7 +72,7 @@ const About = () => {
               style={{ animationDelay: `${index * 0.1}s` } as React.CSSProperties}
             >
               {/* Content section */}
-              <div className="p-8">
+              <div className="p-6 sm:p-8">
                 {/* Icon section */}
                 <div className="flex justify-center mb-6">
                   <div className="relative">
@@ -94,7 +94,7 @@ const About = () => {
           ))}
         </div>
 
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-4 sm:gap-8">
           {stats.map((stat, index) => (
             <div
               key={index}
