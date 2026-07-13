@@ -90,21 +90,17 @@ All colors MUST be HSL.
   }
 
   body {
-    @apply bg-background text-foreground;
+    @apply bg-background text-foreground overflow-x-hidden;
     font-feature-settings: "rlig" 1, "calt" 1;
   }
 
   html {
     scroll-behavior: smooth;
-  }
-}
-
-@layer base {
-  * {
-    @apply border-border;
+    overflow-x: hidden;
   }
 
-  body {
-    @apply bg-background text-foreground;
+  img {
+    max-width: 100%;
+    height: auto;
   }
 }

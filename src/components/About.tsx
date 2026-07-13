@@ -1,34 +1,30 @@
-import { Card } from "@/components/ui/card";
-import { Code2, Palette, Smartphone } from "lucide-react";
-import Lottie from "lottie-react";
-import { useEffect, useState } from "react";
+import { cn } from "@/lib/utils";
 
 const About = () => {
-  const [animationData, setAnimationData] = useState(null);
-
-  useEffect(() => {
-    fetch("/animations/coding-coffee.json")
-      .then((res) => res.json())
-      .then((data) => setAnimationData(data));
-  }, []);
   const expertise = [
     {
-      icon: Code2,
+      number: "01",
       title: "Full Stack Development",
       description:
-        "Full-stack developer specializing in the MERN stack (MongoDB, Express.js, React, and Node.js), building scalable, high-performance web applications from database design and backend APIs to responsive user interfaces and production deployment.",
+        "Specializing in the MERN stack — MongoDB, Express.js, React, and Node.js — building scalable web applications from database design and APIs to responsive interfaces and production deployment.",
     },
     {
-      icon: Palette,
-      title: "UI/UX Design",
+      number: "02",
+      title: "UI / UX Design",
       description:
-        "Proficient in Figma, creating intuitive and beautiful user interfaces that users love.",
+        "Proficient in Figma for wireframing, prototyping, and design systems — turning complex workflows into intuitive, accessible interfaces that users actually enjoy using.",
     },
     {
-      icon: Smartphone,
+      number: "03",
       title: "Mobile Development",
       description:
-        "Building cross-platform mobile apps with Flutter and Dart for iOS and Android.",
+        "Building cross-platform mobile apps with Flutter and Dart for iOS and Android, with thoughtful state management and production-ready delivery.",
+    },
+    {
+      number: "04",
+      title: "Support & AI Systems",
+      description:
+        "Keeping production systems stable through incident response and preventive maintenance, while helping teams adopt AI tools, agents, and automation with discipline.",
     },
   ];
 
@@ -40,71 +36,57 @@ const About = () => {
   ];
 
   return (
-    <section id="about" className="min-h-screen py-12 sm:py-20 bg-section-bg">
+    <section id="about" className="min-h-screen py-16 sm:py-24 bg-section-bg">
       <div className="container mx-auto px-4 sm:px-6">
-        <div className="flex flex-col lg:flex-row items-center gap-6 sm:gap-8 mb-12 sm:mb-16">
-          <div className="flex-1 text-center lg:text-left animate-fade-in">
-            <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-foreground mb-4">
-              About Me
-            </h2>
-            <p className="text-base sm:text-lg text-muted-foreground max-w-2xl mx-auto lg:mx-0">
-              I'm a passionate Software Engineer with a strong foundation in full-stack development
-              and UI/UX design. I love turning complex problems into simple, beautiful, and intuitive
-              solutions.
-            </p>
-          </div>
-          <div className="w-48 h-48 sm:w-64 sm:h-64 md:w-80 md:h-80 animate-fade-in">
-            {animationData && (
-              <Lottie
-                animationData={animationData}
-                loop={true}
-                className="w-full h-full"
-              />
-            )}
-          </div>
+        {/* Rodela-style intro: headline + supporting copy */}
+        <div className="grid grid-cols-1 lg:grid-cols-[1.15fr_0.85fr] gap-8 lg:gap-16 items-end mb-10 sm:mb-14 animate-fade-in">
+          <h2 className="font-display text-4xl sm:text-5xl md:text-6xl lg:text-[3.5rem] leading-[1.1] text-foreground tracking-tight">
+            Software that turns complex problems into{" "}
+            <span className="text-primary italic font-display">simple, useful</span> solutions.
+          </h2>
+          <p className="text-base sm:text-lg text-muted-foreground leading-relaxed max-w-md lg:justify-self-end">
+            I&apos;m Frank Mutethia — a Full Stack Software Engineer with a strong foundation in
+            full-stack development, UI/UX design, mobile apps, and production support. Four
+            practices, one integrated way of working.
+          </p>
         </div>
 
-        <div className="grid sm:grid-cols-2 md:grid-cols-3 gap-6 sm:gap-8 mb-12 sm:mb-20">
-          {expertise.map((item, index) => (
-            <Card
-              key={index}
-              className="group overflow-hidden bg-card border-card-border transition-all duration-500 animate-slide-up hover:shadow-2xl hover:-translate-y-2 hover:border-primary/30 cursor-pointer"
-              style={{ animationDelay: `${index * 0.1}s` } as React.CSSProperties}
-            >
-              {/* Content section */}
-              <div className="p-6 sm:p-8">
-                {/* Icon section */}
-                <div className="flex justify-center mb-6">
-                  <div className="relative">
-                    <div className="absolute inset-0 bg-primary/20 rounded-full blur-xl group-hover:bg-primary/30 transition-colors duration-500"></div>
-                    <div className="relative bg-gradient-to-br from-primary/10 to-primary/5 rounded-2xl p-5 border border-primary/20 group-hover:border-primary/40 transition-all duration-500">
-                      <item.icon className="h-14 w-14 text-primary group-hover:scale-110 transition-transform duration-500" />
-                    </div>
-                  </div>
-                </div>
-                
-                <h3 className="text-xl font-bold text-foreground mb-4 text-center group-hover:text-primary transition-colors duration-300">
+        {/* Numbered 2x2 panel with hairline dividers */}
+        <div className="rounded-2xl sm:rounded-3xl bg-muted/60 dark:bg-muted/40 border border-border overflow-hidden animate-slide-up">
+          <div className="grid grid-cols-1 md:grid-cols-2">
+            {expertise.map((item, index) => (
+              <article
+                key={item.number}
+                className={cn(
+                  "p-7 sm:p-10 lg:p-12 text-left transition-colors duration-300 hover:bg-background/60",
+                  index < expertise.length - 1 && "border-b border-border",
+                  "md:border-b-0",
+                  index < 2 && "md:border-b md:border-border",
+                  index % 2 === 0 && "md:border-r md:border-border"
+                )}
+              >
+                <p className="text-sm text-muted-foreground/80 mb-5 sm:mb-6 tabular-nums tracking-wide">
+                  {item.number}
+                </p>
+                <h3 className="font-display text-2xl sm:text-3xl text-foreground mb-3 sm:mb-4 leading-snug">
                   {item.title}
                 </h3>
-                <p className="text-muted-foreground text-center leading-relaxed group-hover:text-foreground/90 transition-colors duration-300">
+                <p className="text-sm sm:text-base text-muted-foreground leading-relaxed max-w-md">
                   {item.description}
                 </p>
-              </div>
-            </Card>
-          ))}
+              </article>
+            ))}
+          </div>
         </div>
 
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-4 sm:gap-8">
-          {stats.map((stat, index) => (
-            <div
-              key={index}
-              className="text-center animate-slide-up"
-              style={{ animationDelay: `${index * 0.1}s` }}
-            >
-              <div className="text-4xl md:text-5xl font-bold text-primary mb-2">
+        {/* Quiet stats row */}
+        <div className="mt-12 sm:mt-16 grid grid-cols-2 md:grid-cols-4 gap-6 sm:gap-8 border-t border-border pt-10 sm:pt-12">
+          {stats.map((stat) => (
+            <div key={stat.label} className="text-left md:text-center">
+              <div className="font-display text-3xl sm:text-4xl md:text-5xl text-foreground mb-1">
                 {stat.value}
               </div>
-              <div className="text-muted-foreground">{stat.label}</div>
+              <div className="text-xs sm:text-sm text-muted-foreground">{stat.label}</div>
             </div>
           ))}
         </div>

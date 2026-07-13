@@ -40,12 +40,12 @@ const Navigation = () => {
           </button>
 
           {/* Desktop Navigation */}
-          <div className="hidden md:flex items-center gap-8">
+          <div className="hidden md:flex items-center gap-4 lg:gap-8">
             {["Home", "About", "Skills", "Projects", "Experience", "Contact"].map((item) => (
               <button
                 key={item}
                 onClick={() => scrollToSection(item.toLowerCase())}
-                className="text-sm text-muted-foreground hover:text-primary transition-colors"
+                className="text-sm text-muted-foreground hover:text-primary transition-colors whitespace-nowrap min-h-[44px]"
               >
                 {item}
               </button>
@@ -53,8 +53,9 @@ const Navigation = () => {
             <Button 
               variant="ghost" 
               size="icon" 
-              className="text-muted-foreground"
+              className="text-muted-foreground h-11 w-11"
               onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
+              aria-label="Toggle theme"
             >
               {theme === "dark" ? <Sun className="h-5 w-5" /> : <Moon className="h-5 w-5" />}
             </Button>
@@ -65,8 +66,9 @@ const Navigation = () => {
             <Button 
               variant="ghost" 
               size="icon" 
-              className="text-muted-foreground"
+              className="text-muted-foreground h-11 w-11"
               onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
+              aria-label="Toggle theme"
             >
               {theme === "dark" ? <Sun className="h-5 w-5" /> : <Moon className="h-5 w-5" />}
             </Button>
@@ -74,8 +76,9 @@ const Navigation = () => {
               variant="ghost"
               size="icon"
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-              className="text-foreground"
+              className="text-foreground h-11 w-11"
               aria-label="Toggle menu"
+              aria-expanded={mobileMenuOpen}
             >
               {mobileMenuOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
             </Button>
@@ -85,12 +88,12 @@ const Navigation = () => {
         {/* Mobile Menu */}
         {mobileMenuOpen && (
           <div className="md:hidden mt-4 pb-4 border-t border-border pt-4 animate-slide-down">
-            <div className="flex flex-col gap-4">
+            <div className="flex flex-col gap-1">
               {["Home", "About", "Skills", "Projects", "Experience", "Contact"].map((item) => (
                 <button
                   key={item}
                   onClick={() => scrollToSection(item.toLowerCase())}
-                  className="text-left text-sm text-muted-foreground hover:text-primary transition-colors py-2 px-2"
+                  className="text-left text-sm text-muted-foreground hover:text-primary transition-colors py-3 px-2 min-h-[44px] rounded-md hover:bg-primary/5"
                 >
                   {item}
                 </button>

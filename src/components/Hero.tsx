@@ -1,7 +1,8 @@
 import { Button } from "@/components/ui/button";
-import { Github, Linkedin, Mail, ChevronDown } from "lucide-react";
+import { Github, Linkedin, Mail, ChevronDown, Download } from "lucide-react";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import frankProfile from "@/assets/frank-profile.jpg";
+import cvPdf from "@/assets/Frank Mutethia Curriculum Vitae.pdf";
 
 const Hero = () => {
   const scrollToSection = (id: string) => {
@@ -12,13 +13,13 @@ const Hero = () => {
   };
 
   return (
-    <section id="home" className="min-h-screen flex items-center justify-center bg-hero-bg relative pt-20">
+    <section id="home" className="min-h-screen flex items-center justify-center bg-hero-bg relative pt-20 overflow-hidden">
       <div className="container mx-auto px-4 sm:px-6 py-12 sm:py-20">
-        <div className="grid md:grid-cols-2 gap-8 md:gap-12 items-center">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12 items-center">
           <div className="flex justify-center md:justify-start animate-slide-in-left">
             <Avatar className="h-48 w-48 sm:h-56 sm:w-56 md:h-64 md:w-64 border-4 border-primary/20">
               <AvatarImage src={frankProfile} />
-              <AvatarFallback className="text-4xl sm:text-5xl md:text-6xl">FK</AvatarFallback>
+              <AvatarFallback className="text-4xl sm:text-5xl md:text-6xl">FM</AvatarFallback>
             </Avatar>
           </div>
 
@@ -35,7 +36,7 @@ const Hero = () => {
               and beautiful user interfaces.
             </p>
 
-            <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center md:justify-start">
+            <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center md:justify-start flex-wrap">
               <Button 
                 onClick={() => scrollToSection("contact")} 
                 size="lg" 
@@ -50,6 +51,21 @@ const Hero = () => {
                 className="w-full sm:w-auto min-h-[44px]"
               >
                 View My Work
+              </Button>
+              <Button
+                asChild
+                size="lg"
+                variant="outline"
+                className="w-full sm:w-auto min-h-[44px]"
+              >
+                <a
+                  href={cvPdf}
+                  download="Frank-Mutethia-Curriculum-Vitae.pdf"
+                  aria-label="Download Frank Mutethia Curriculum Vitae"
+                >
+                  <Download className="h-4 w-4 mr-2" />
+                  Download CV
+                </a>
               </Button>
             </div>
 
